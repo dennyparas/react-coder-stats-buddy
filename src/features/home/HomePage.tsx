@@ -1,7 +1,8 @@
 import React from "react";
+import HomeSearchForm from "./HomeSearchForm";
 
 const HomePage: React.FC = () => {
-  return <div>Home</div>;
+  return <HomeSearchForm />;
 };
 
 export default HomePage;
