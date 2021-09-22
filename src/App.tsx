@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./features/home/HomePage";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+import Navbar from "./components/Navbar";
 
 const theme = createTheme({
   typography: {
@@ -17,8 +20,10 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <CssBaseline />
+        <Navbar />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <HomePage />
           </Route>
         </Switch>
