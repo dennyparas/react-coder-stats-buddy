@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { makeStyles } from "@mui/styles";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   form: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const HomeSearchForm: React.FC = () => {
+  let history = useHistory();
   const classes = useStyles();
   const [searchInput, setSearchInput] = useState("");
   const [type, setType] = useState<string>("user");
@@ -35,8 +37,13 @@ const HomeSearchForm: React.FC = () => {
 
   const search = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(type);
-    console.log(searchInput);
+    if (searchInput !== "") {
+      if (type === "user") {
+        return history.push(`/users?q=${searchInput}`);
+      } else {
+        return history.push(`/repos?q=${searchInput}`);
+      }
+    }
   };
 
   return (
@@ -53,7 +60,7 @@ const HomeSearchForm: React.FC = () => {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <TextField
-                sx={{ background: "#fff" }}
+                sx={{ background: "#fff", fontFamily: "Poppins" }}
                 label="Search"
                 id="outlined-size-small"
                 size="small"
@@ -67,7 +74,7 @@ const HomeSearchForm: React.FC = () => {
               <FormControl size="small" fullWidth>
                 <InputLabel id="type-label">Type</InputLabel>
                 <Select
-                  sx={{ background: "#fff" }}
+                  sx={{ background: "#fff", fontFamily: "Poppins" }}
                   labelId="type-label"
                   id="type-label"
                   value={type}
@@ -75,7 +82,7 @@ const HomeSearchForm: React.FC = () => {
                   onChange={handleTypeChange}
                 >
                   <MenuItem value="user">User</MenuItem>
-                  <MenuItem value="Repository">Repository</MenuItem>
+                  <MenuItem value="repository">Repository</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
@@ -83,7 +90,7 @@ const HomeSearchForm: React.FC = () => {
               <Button
                 color="warning"
                 size="medium"
-                sx={{ bgcolor: "warning.dark" }}
+                sx={{ bgcolor: "warning.dark", fontFamily: "Poppins" }}
                 type="submit"
                 variant="contained"
               >
