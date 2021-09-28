@@ -53,6 +53,28 @@ const MobileDrawer: React.FC = () => {
               <ListItemText primary={"Home"} />
             </ListItem>
           </List>
+          <List>
+            <ListItem
+              exact
+              className={classes.button}
+              button
+              component={NavLink}
+              to="/languages"
+            >
+              <ListItemText primary={"Language"} />
+            </ListItem>
+          </List>
+          <List>
+            <ListItem
+              exact
+              className={classes.button}
+              button
+              component={NavLink}
+              to="/repos"
+            >
+              <ListItemText primary={"Repos"} />
+            </ListItem>
+          </List>
         </Box>
       </Drawer>
     </>

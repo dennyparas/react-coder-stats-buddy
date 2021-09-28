@@ -1,8 +1,8 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import homeReducer from "./../features/home/HomeSlice";
+import languagesReducer from "./../features/languages/LanguagesSlice";
 
 export const store = configureStore({
-  reducer: { home: homeReducer },
+  reducer: { languages: languagesReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
               }}
             >
               <Button
+                sx={{ fontFamily: "Poppins" }}
                 className={classes.button}
                 color="inherit"
                 exact
@@ -44,6 +45,24 @@ const Navbar: React.FC = () => {
                 to="/"
               >
                 Home
+              </Button>
+              <Button
+                sx={{ fontFamily: "Poppins" }}
+                className={classes.button}
+                color="inherit"
+                component={NavLink}
+                to="/languages"
+              >
+                Language
+              </Button>
+              <Button
+                sx={{ fontFamily: "Poppins" }}
+                className={classes.button}
+                color="inherit"
+                component={NavLink}
+                to="/repos"
+              >
+                Repos
               </Button>
             </Box>
             <MobileDrawer />
