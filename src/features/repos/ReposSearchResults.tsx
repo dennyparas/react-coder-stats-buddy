@@ -64,7 +64,8 @@ const ReposSearchResults: React.FC<ParamsProps> = ({
             component="div"
             sx={{ fontFamily: "Poppins" }}
           >
-            We could not find any repositories matching your '{searchParams}'
+            We could not find any repositories matching your
+            {searchParams ? ` ${searchParams}` : " query"}
           </Typography>
         )}
       </Box>

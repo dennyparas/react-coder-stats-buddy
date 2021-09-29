@@ -4,6 +4,7 @@ import {
   Container,
   Grid,
   InputLabel,
+  ListSubheader,
   MenuItem,
   TextField,
 } from "@mui/material";
@@ -125,6 +126,28 @@ const ReposSearchForm: React.FC<ParamsProps> = ({
                   onChange={handleLanguageChange}
                 >
                   <MenuItem value="Any">Any</MenuItem>
+                  <ListSubheader
+                    sx={{
+                      bgcolor: "#eee",
+                    }}
+                  >
+                    Popular
+                  </ListSubheader>
+                  {languages.length > 0 &&
+                    languages
+                      .filter((language) => language.popular === "true")
+                      .map((filteredLanguage, index) => (
+                        <MenuItem key={index} value={filteredLanguage.name}>
+                          {filteredLanguage.name}
+                        </MenuItem>
+                      ))}
+                  <ListSubheader
+                    sx={{
+                      bgcolor: "#eee",
+                    }}
+                  >
+                    Everything
+                  </ListSubheader>
                   {languages.length > 0 &&
                     languages.map((language, index) => (
                       <MenuItem key={index} value={language.name}>

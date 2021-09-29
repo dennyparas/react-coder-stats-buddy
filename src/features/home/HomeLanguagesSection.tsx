@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import LanguageList from "../../components/LanguageList";
 import { useAppSelector } from "../../hooks/reduxHooks";
-import { showAllTopLanguages } from "./HomeSlice";
+import { showPopularLanguages } from "./HomeSlice";
 
 const HomeLanguagesSection: React.FC = () => {
-  const homeLanguages = useAppSelector(showAllTopLanguages);
+  const homeLanguages = useAppSelector(showPopularLanguages);
   return (
     <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
       <Box sx={{ mt: "15px", mb: "15px" }}>

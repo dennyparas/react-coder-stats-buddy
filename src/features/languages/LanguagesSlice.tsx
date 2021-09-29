@@ -4,7 +4,7 @@ import { Languages } from "../../types/languageTypes";
 import languages from "./../../data/programming-languages.json";
 
 const initialState: Languages = {
-  languages,
+  languages: languages,
 };
 
 export const languagesSlice = createSlice({
@@ -12,6 +12,9 @@ export const languagesSlice = createSlice({
   initialState,
   reducers: {},
 });
+
+export const showPopularLanguages = (state: RootState) =>
+  state.languages.languages.filter((language) => language.popular === "true");
 
 export const showAllLanguages = (state: RootState) => state.languages.languages;
 

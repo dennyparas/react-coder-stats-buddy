@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import reptile from "./../images/contemplative-reptile.jpeg";
 import { styled } from "@mui/system";
 import { NavLink } from "react-router-dom";
 
@@ -12,17 +11,24 @@ const UserCardContent = styled(CardContent)(`
   &:last-child {
     padding-bottom: 10px;
   };
-  
 `);
 
-const UserCard: React.FC = () => {
+type UserProps = {
+  user: {
+    login: string;
+    avatar_url: string;
+    url: string;
+  };
+};
+
+const UserCard: React.FC<UserProps> = ({ user }) => {
   return (
     <Card sx={{ maxWidth: 345 }} variant="outlined">
       <CardMedia
         component="img"
         height="140"
-        image={reptile}
-        alt="green iguana"
+        image={user.avatar_url}
+        alt={user.login}
       />
       <UserCardContent>
         <Typography
@@ -38,9 +44,9 @@ const UserCard: React.FC = () => {
           variant="subtitle1"
           color="text.secondary"
           component={NavLink}
-          to="/"
+          to={`user/${user.login}`}
         >
-          Mac Miller
+          {user.login}
         </Typography>
       </UserCardContent>
     </Card>
