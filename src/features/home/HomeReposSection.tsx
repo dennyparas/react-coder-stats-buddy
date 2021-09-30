@@ -37,7 +37,16 @@ const HomeReposSection: React.FC = () => {
         </Typography>
       </Box>
       <RepoList repos={repos} isLoading={homeReposStatus === "loading"} />
-      {homeReposError && <h1>Error</h1>}
+      {homeReposError && (
+        <Typography
+          gutterBottom
+          variant="body1"
+          component="div"
+          sx={{ fontFamily: "Poppins" }}
+        >
+          Error loading repos. Please try again later.
+        </Typography>
+      )}
     </Container>
   );
 };

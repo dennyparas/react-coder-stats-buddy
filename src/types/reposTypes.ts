@@ -16,4 +16,5 @@ export type Repos = {
   reposError: boolean;
   reposTotalCount: number;
   reposCurrentPage: number;
+  queryParams: string;
 };

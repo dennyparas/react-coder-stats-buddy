@@ -1,11 +1,18 @@
 import React, { useEffect } from "react";
 import ReposSearchForm from "./ReposSearchForm";
 import ReposSearchResults from "./ReposSearchResults";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useLocation } from "react-router-dom";
-import { clearReposResults, getReposAsync } from "./ReposSlice";
+import {
+  clearReposResults,
+  getReposAsync,
+  saveReposQueryParams,
+} from "./ReposSlice";
 
 const ReposPage: React.FC = () => {
+  const stateReposQueryParams = useAppSelector(
+    (state) => state.repos.queryParams
+  );
   const dispatch = useAppDispatch();
   const queryParams = useLocation().search;
 
@@ -15,8 +22,10 @@ const ReposPage: React.FC = () => {
   let orderParams = new URLSearchParams(queryParams).get("order") || "";
 
   const fetchData = () => {
-    dispatch(clearReposResults());
-    if (searchParams || languageParams) {
+    if (
+      searchParams ||
+      (languageParams && queryParams !== stateReposQueryParams)
+    ) {
       const language = languageParams === "Any" ? " " : languageParams;
       dispatch(clearReposResults());
       dispatch(
@@ -29,10 +38,15 @@ const ReposPage: React.FC = () => {
           perPage: 100,
         })
       );
+      dispatch(saveReposQueryParams(queryParams));
     }
   };
 
   useEffect(() => {
+    if (queryParams === "") {
+      dispatch(clearReposResults());
+      dispatch(saveReposQueryParams(queryParams));
+    }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, languageParams, sortParams, orderParams]);

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { Repos } from "../../types/reposTypes";
 import { fetchRepos } from "./../../services/reposService";
@@ -9,6 +9,7 @@ const initialState: Repos = {
   reposError: false,
   reposTotalCount: 0,
   reposCurrentPage: 0,
+  queryParams: "",
 };
 
 export const getReposAsync = createAsyncThunk(
@@ -51,11 +52,15 @@ export const reposSlice = createSlice({
       state.reposStatus = "idle";
       state.reposCurrentPage = 0;
     },
+    saveReposQueryParams: (state, action: PayloadAction<string>) => {
+      state.queryParams = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getReposAsync.pending, (state) => {
         state.reposStatus = "loading";
+        state.reposError = false;
       })
       .addCase(getReposAsync.fulfilled, (state, action) => {
         state.reposStatus = "success";
@@ -70,7 +75,7 @@ export const reposSlice = createSlice({
   },
 });
 
-export const { clearReposResults } = reposSlice.actions;
+export const { clearReposResults, saveReposQueryParams } = reposSlice.actions;
 
 export const repoListState = (state: RootState) => state.repos.repos;
 

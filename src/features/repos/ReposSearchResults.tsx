@@ -3,6 +3,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import RepoList from "../../components/RepoList";
 import { useAppSelector, useAppDispatch } from "../../hooks/reduxHooks";
 import { repoListState, getReposAsync } from "./ReposSlice";
+import ErrorDialog from "../../components/ErrorDialog";
 
 type ParamsProps = {
   searchParams: string;
@@ -91,7 +92,7 @@ const ReposSearchResults: React.FC<ParamsProps> = ({
         </Stack>
       )}
 
-      {reposError && <h1>Error</h1>}
+      {reposError && <ErrorDialog error={reposError} />}
     </Container>
   );
 };
