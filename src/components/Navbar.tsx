@@ -64,6 +64,15 @@ const Navbar: React.FC = () => {
               >
                 Repos
               </Button>
+              <Button
+                sx={{ fontFamily: "Poppins" }}
+                className={classes.button}
+                color="inherit"
+                component={NavLink}
+                to="/users"
+              >
+                Users
+              </Button>
             </Box>
             <MobileDrawer />
           </Toolbar>

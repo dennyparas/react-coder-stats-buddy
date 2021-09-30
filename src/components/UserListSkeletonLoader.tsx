@@ -13,7 +13,7 @@ const UserCardSkeleton: React.FC = () => {
 const UserListSkeletonLoader: React.FC = () => {
   return (
     <>
-      {Array.from({ length: 9 }, (_, i) => (
+      {Array.from({ length: 12 }, (_, i) => (
         <Grid key={i} item xs={6} sm={4} md={3} lg={2} xl={2}>
           <UserCardSkeleton />
         </Grid>

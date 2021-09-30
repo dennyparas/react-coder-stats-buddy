@@ -15,6 +15,7 @@ const HomeUsersSection: React.FC = () => {
       dispatch(
         getHomeUsersAsync({
           query: "",
+          location: "",
           page: 1,
           sort: "followers",
           order: "desc",
@@ -37,7 +38,16 @@ const HomeUsersSection: React.FC = () => {
         </Typography>
       </Box>
       <UserList users={users} isLoading={homeUsersStatus === "loading"} />
-      {homeUsersError && <h1>Error</h1>}
+      {homeUsersError && (
+        <Typography
+          gutterBottom
+          variant="body1"
+          component="div"
+          sx={{ fontFamily: "Poppins" }}
+        >
+          Error loading users. Please try again later.
+        </Typography>
+      )}
     </Container>
   );
 };

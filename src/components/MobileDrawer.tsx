@@ -75,6 +75,17 @@ const MobileDrawer: React.FC = () => {
               <ListItemText primary={"Repos"} />
             </ListItem>
           </List>
+          <List>
+            <ListItem
+              exact
+              className={classes.button}
+              button
+              component={NavLink}
+              to="/users"
+            >
+              <ListItemText primary={"Users"} />
+            </ListItem>
+          </List>
         </Box>
       </Drawer>
     </>

@@ -3,9 +3,9 @@ import { RootState } from "../../app/store";
 import homeLanguages from "./../../data/programming-languages.json";
 import { Language } from "../../types/languageTypes";
 import { Repo } from "../../types/reposTypes";
-import { User } from "../../types/userTypes";
+import { User } from "../../types/usersTypes";
 import { fetchRepos } from "./../../services/reposService";
-import { fetchUsers } from "./../../services/userService";
+import { fetchUsers } from "../../services/usersService";
 
 type HomeTypes = {
   homeLanguages: Language[];
@@ -59,18 +59,27 @@ export const getHomeUsersAsync = createAsyncThunk(
   "home/fetchHomeUsers",
   async ({
     query,
+    location,
     page,
     sort,
     order,
     perPage,
   }: {
     query: string;
+    location: string;
     page: number;
     sort: string;
     order: string;
     perPage: number;
   }) => {
-    const response = await fetchUsers(query, page, sort, order, perPage);
+    const response = await fetchUsers(
+      query,
+      location,
+      page,
+      sort,
+      order,
+      perPage
+    );
     return response.data;
   }
 );

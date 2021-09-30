@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import { User } from "./../types/userTypes";
+import { User } from "../types/usersTypes";
 import UserCard from "./UserCard";
 import UserListSkeletonLoader from "./UserListSkeletonLoader";
 

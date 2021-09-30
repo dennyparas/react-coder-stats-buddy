@@ -7,6 +7,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 import Navbar from "./components/Navbar";
 import ReposPage from "./features/repos/ReposPage";
+import UsersPage from "./features/users/UsersPage";
+import UserDetailsPage from "./features/user/UserDetailsPage";
 
 const theme = createTheme({
   typography: {
@@ -33,6 +35,12 @@ const App: React.FC = () => {
           </Route>
           <Route path="/repos">
             <ReposPage />
+          </Route>
+          <Route path="/users">
+            <UsersPage />
+          </Route>
+          <Route path="/user/:userId">
+            <UserDetailsPage />
           </Route>
         </Switch>
       </Router>
