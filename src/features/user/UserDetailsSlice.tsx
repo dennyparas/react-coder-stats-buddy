@@ -93,7 +93,8 @@ export const userDetailsSlice = createSlice({
 });
 
 export const userDetails = (state: RootState) => state.user.userDetails;
-export const userRepos = (state: RootState) => state.user.userRepos;
+export const userRepos = (state: RootState) =>
+  state.user.userRepos.filter((repo) => !repo.fork);
 export const { saveUserId, clearUserInfo } = userDetailsSlice.actions;
 
 export default userDetailsSlice.reducer;

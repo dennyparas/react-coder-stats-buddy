@@ -130,10 +130,10 @@ const UsersSearchForm: React.FC<ParamsProps> = ({
                   <MenuItem value={`sort=repositories&order=desc`}>
                     Most repositories
                   </MenuItem>
-                  <MenuItem value={`sort=repositoriess&order=asc`}>
+                  <MenuItem value={`sort=repositories&order=asc`}>
                     Fewest repositories
                   </MenuItem>
-                  <MenuItem value={`sort=joinedd&order=desc`}>
+                  <MenuItem value={`sort=joined&order=desc`}>
                     Most recently joined
                   </MenuItem>
                   <MenuItem value={`sort=joined&order=asc`}>

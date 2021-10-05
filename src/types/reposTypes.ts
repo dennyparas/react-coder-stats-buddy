@@ -8,6 +8,7 @@ export type Repo = {
     name: string;
   };
   html_url: string;
+  fork: boolean;
 };
 
 export type Repos = {
