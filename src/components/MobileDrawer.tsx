@@ -61,7 +61,7 @@ const MobileDrawer: React.FC = () => {
               component={NavLink}
               to="/languages"
             >
-              <ListItemText primary={"Language"} />
+              <ListItemText primary={"Language List"} />
             </ListItem>
           </List>
           <List>
@@ -72,7 +72,7 @@ const MobileDrawer: React.FC = () => {
               component={NavLink}
               to="/repos"
             >
-              <ListItemText primary={"Repos"} />
+              <ListItemText primary={"Search Repos"} />
             </ListItem>
           </List>
           <List>
@@ -83,7 +83,7 @@ const MobileDrawer: React.FC = () => {
               component={NavLink}
               to="/users"
             >
-              <ListItemText primary={"Users"} />
+              <ListItemText primary={"Search Users"} />
             </ListItem>
           </List>
         </Box>

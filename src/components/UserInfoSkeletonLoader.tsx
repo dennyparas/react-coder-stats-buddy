@@ -3,7 +3,7 @@ import React from "react";
 
 const UserInfoSkeletorLoader: React.FC = () => {
   return (
-    <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
+    <Container maxWidth="md" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
           <Skeleton
