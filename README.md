@@ -29,3 +29,9 @@ npm run build
 ### Github search rest API page
 
 https://docs.github.com/en/rest
+
+
+### Acknowledgments / Inspiration
+
+* [Octoprofile](https://github.com/bchiang7/octoprofile)
+* [coderstats.net](https://github.com/coderstats/coderstats.net)
