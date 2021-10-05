@@ -402,14 +402,6 @@
         "popular": "true"
     },
     {
-        "name": "CSV",
-        "type": "data",
-        "extensions": [
-            ".csv"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Cap'n Proto",
         "type": "programming",
         "extensions": [
@@ -578,18 +570,6 @@
         "popular": "false"
     },
     {
-        "name": "Cpp-ObjDump",
-        "type": "data",
-        "extensions": [
-            ".cppobjdump",
-            ".c++-objdump",
-            ".c++objdump",
-            ".cpp-objdump",
-            ".cxx-objdump"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Creole",
         "type": "prose",
         "extensions": [
@@ -650,14 +630,6 @@
         "popular": "false"
     },
     {
-        "name": "D-ObjDump",
-        "type": "data",
-        "extensions": [
-            ".d-objdump"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "DIGITAL Command Language",
         "type": "programming",
         "extensions": [
@@ -674,28 +646,10 @@
         "popular": "true"
     },
     {
-        "name": "DNS Zone",
-        "type": "data",
-        "extensions": [
-            ".zone",
-            ".arpa"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "DTrace",
         "type": "programming",
         "extensions": [
             ".d"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Darcs Patch",
-        "type": "data",
-        "extensions": [
-            ".darcspatch",
-            ".dpatch"
         ],
         "popular": "false"
     },
@@ -774,14 +728,6 @@
         "extensions": [
             ".sch",
             ".brd"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Ecere Projects",
-        "type": "data",
-        "extensions": [
-            ".epj"
         ],
         "popular": "false"
     },
@@ -906,15 +852,6 @@
         "type": "programming",
         "extensions": [
             ".fs"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Formatted",
-        "type": "data",
-        "extensions": [
-            ".for",
-            ".eam.fs"
         ],
         "popular": "false"
     },
@@ -1132,14 +1069,6 @@
         "popular": "false"
     },
     {
-        "name": "Graph Modeling Language",
-        "type": "data",
-        "extensions": [
-            ".gml"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "GraphQL",
         "type": "data",
         "extensions": [
@@ -1274,14 +1203,6 @@
         "popular": "false"
     },
     {
-        "name": "HTTP",
-        "type": "data",
-        "extensions": [
-            ".http"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Hack",
         "type": "programming",
         "extensions": [
@@ -1380,15 +1301,6 @@
         "popular": "false"
     },
     {
-        "name": "IRC log",
-        "type": "data",
-        "extensions": [
-            ".irclog",
-            ".weechatlog"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Idris",
         "type": "programming",
         "extensions": [
@@ -1467,22 +1379,6 @@
             ".geojson",
             ".lock",
             ".topojson"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "JSON5",
-        "type": "data",
-        "extensions": [
-            ".json5"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "JSONLD",
-        "type": "data",
-        "extensions": [
-            ".jsonld"
         ],
         "popular": "false"
     },
@@ -1727,23 +1623,6 @@
         "extensions": [
             ".b",
             ".m"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Linker Script",
-        "type": "data",
-        "extensions": [
-            ".ld",
-            ".lds"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Linux Kernel Module",
-        "type": "data",
-        "extensions": [
-            ".mod"
         ],
         "popular": "false"
     },
@@ -2080,14 +1959,6 @@
         "popular": "false"
     },
     {
-        "name": "NL",
-        "type": "data",
-        "extensions": [
-            ".nl"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "NSIS",
         "type": "programming",
         "extensions": [
@@ -2155,14 +2026,6 @@
         "extensions": [
             ".nim",
             ".nimrod"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Ninja",
-        "type": "data",
-        "extensions": [
-            ".ninja"
         ],
         "popular": "false"
     },
@@ -2471,14 +2334,6 @@
         "popular": "false"
     },
     {
-        "name": "Pickle",
-        "type": "data",
-        "extensions": [
-            ".pkl"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "PicoLisp",
         "type": "programming",
         "extensions": [
@@ -2645,14 +2500,6 @@
         "popular": "true"
     },
     {
-        "name": "Python traceback",
-        "type": "data",
-        "extensions": [
-            ".pytb"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "QML",
         "type": "programming",
         "extensions": [
@@ -2741,14 +2588,6 @@
         "type": "programming",
         "extensions": [
             ".rl"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Raw token data",
-        "type": "data",
-        "extensions": [
-            ".raw"
         ],
         "popular": "false"
     },
@@ -2875,15 +2714,6 @@
         "popular": "false"
     },
     {
-        "name": "SPARQL",
-        "type": "data",
-        "extensions": [
-            ".sparql",
-            ".rq"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "SQF",
         "type": "programming",
         "extensions": [
@@ -2913,22 +2743,6 @@
         "extensions": [
             ".sql",
             ".db2"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "STON",
-        "type": "data",
-        "extensions": [
-            ".ston"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "SVG",
-        "type": "data",
-        "extensions": [
-            ".svg"
         ],
         "popular": "false"
     },
@@ -3167,14 +2981,6 @@
         "popular": "false"
     },
     {
-        "name": "TOML",
-        "type": "data",
-        "extensions": [
-            ".toml"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "TXL",
         "type": "programming",
         "extensions": [
@@ -3277,14 +3083,6 @@
         "popular": "false"
     },
     {
-        "name": "Turtle",
-        "type": "data",
-        "extensions": [
-            ".ttl"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Twig",
         "type": "markup",
         "extensions": [
@@ -3306,19 +3104,6 @@
         "type": "programming",
         "extensions": [
             ".upc"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "Unity3D Asset",
-        "type": "data",
-        "extensions": [
-            ".anim",
-            ".asset",
-            ".mat",
-            ".meta",
-            ".prefab",
-            ".unity"
         ],
         "popular": "false"
     },
@@ -3629,14 +3414,6 @@
         "popular": "false"
     },
     {
-        "name": "YANG",
-        "type": "data",
-        "extensions": [
-            ".yang"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "Yacc",
         "type": "programming",
         "extensions": [
@@ -3665,28 +3442,11 @@
         "popular": "false"
     },
     {
-        "name": "desktop",
-        "type": "data",
-        "extensions": [
-            ".desktop",
-            ".desktop.in"
-        ],
-        "popular": "false"
-    },
-    {
         "name": "eC",
         "type": "programming",
         "extensions": [
             ".ec",
             ".eh"
-        ],
-        "popular": "false"
-    },
-    {
-        "name": "edn",
-        "type": "data",
-        "extensions": [
-            ".edn"
         ],
         "popular": "false"
     },

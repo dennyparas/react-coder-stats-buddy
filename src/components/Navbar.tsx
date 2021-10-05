@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
                 component={NavLink}
                 to="/languages"
               >
-                Language
+                Language List
               </Button>
               <Button
                 sx={{ fontFamily: "Poppins" }}
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 component={NavLink}
                 to="/repos"
               >
-                Repos
+                Search Repos
               </Button>
               <Button
                 sx={{ fontFamily: "Poppins" }}
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                 component={NavLink}
                 to="/users"
               >
-                Users
+                Search Users
               </Button>
             </Box>
             <MobileDrawer />
