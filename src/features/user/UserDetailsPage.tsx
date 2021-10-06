@@ -12,6 +12,7 @@ import UserInfo from "./UserInfo";
 import UserRepos from "./UserRepos";
 import { userRepos, userDetails } from "./UserDetailsSlice";
 import { Typography } from "@mui/material";
+import ErrorDialog from "../../components/ErrorDialog";
 
 const UserDetailsPage: React.FC = () => {
   const { userId } = useParams<{ userId: string }>();
@@ -24,6 +25,9 @@ const UserDetailsPage: React.FC = () => {
   );
   const userDetailsNotFound = useAppSelector(
     (state) => state.user.userDetailsNotFound
+  );
+  const userDetailsError = useAppSelector(
+    (state) => state.user.userDetailsError
   );
 
   const dispatch = useAppDispatch();
@@ -44,7 +48,7 @@ const UserDetailsPage: React.FC = () => {
       <UserInfo user={user} status={userDetailsStatus} />
       <UserCharts repos={repos} user={user} status={userReposStatus} />
       <UserRepos repos={repos} status={userReposStatus} />
-      {userDetailsNotFound && (
+      {userDetailsError && userDetailsNotFound && (
         <Typography
           align="center"
           gutterBottom
@@ -54,6 +58,9 @@ const UserDetailsPage: React.FC = () => {
         >
           User not found
         </Typography>
+      )}
+      {userDetailsError && !userDetailsNotFound && (
+        <ErrorDialog error={userDetailsError} />
       )}
     </>
   );
