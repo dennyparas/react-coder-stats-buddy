@@ -21,6 +21,7 @@ export type UserDetails = {
   };
   userDetailsStatus: string;
   userDetailsError: boolean;
+  userDetailsNotFound: boolean;
   userRepos: Repo[];
   userReposStatus: string;
   userReposError: boolean;

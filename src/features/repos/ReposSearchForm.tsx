@@ -15,6 +15,7 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import { showAllLanguages } from "../languages/LanguagesSlice";
+import SearchIcon from "@mui/icons-material/Search";
 
 const useStyles = makeStyles(() => ({
   form: {
@@ -198,7 +199,7 @@ const ReposSearchForm: React.FC<ParamsProps> = ({
                 type="submit"
                 variant="contained"
               >
-                Search
+                <SearchIcon />
               </Button>
             </Grid>
           </Grid>

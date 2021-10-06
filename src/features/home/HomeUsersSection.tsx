@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 import UserList from "../../components/UserList";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { homeUsers, getHomeUsersAsync } from "./../home/HomeSlice";
+import { NavLink } from "react-router-dom";
 
 const HomeUsersSection: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ const HomeUsersSection: React.FC = () => {
         getHomeUsersAsync({
           query: "",
           location: "",
+          language: "",
           page: 1,
           sort: "followers",
           order: "desc",
@@ -29,10 +31,12 @@ const HomeUsersSection: React.FC = () => {
     <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
       <Box sx={{ mt: "15px", mb: "15px" }}>
         <Typography
+          color="text.primary"
           gutterBottom
           variant="h6"
-          component="div"
-          sx={{ fontFamily: "Poppins" }}
+          component={NavLink}
+          sx={{ fontFamily: "Poppins", textDecoration: "none" }}
+          to={`users?language=Any&order=desc`}
         >
           Most Followed Users
         </Typography>
