@@ -4,7 +4,9 @@ A web app (single page application) created with react.js, typescript, material 
 
 ### Overview
 
-![coder-stats-buddy](https://user-images.githubusercontent.com/16351223/135535400-0849d27d-6e5b-433f-af9b-88e9a0d8e8b6.png)
+![coder-stats-buddy-home](https://user-images.githubusercontent.com/16351223/136286893-ac20c5b6-e203-462a-adca-c48c45aeb120.png)
+![coder-stats-buddy-user](https://user-images.githubusercontent.com/16351223/136286882-14a9e49c-1cd6-4a56-8f0b-78bffc6a93d8.png)
+
 
 ## License
 
