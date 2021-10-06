@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const UserCardContent = styled(CardContent)(`
   padding: 10px;
@@ -22,6 +23,11 @@ type UserProps = {
 };
 
 const UserCard: React.FC<UserProps> = ({ user }) => {
+  const history = useHistory();
+  const redirectToProfile = (login: string) => {
+    history.push(`/user/${login}`);
+  };
+
   return (
     <Card sx={{ maxWidth: 345 }} variant="outlined">
       <CardMedia
@@ -29,6 +35,10 @@ const UserCard: React.FC<UserProps> = ({ user }) => {
         height="140"
         image={user.avatar_url}
         alt={user.login}
+        onClick={() => redirectToProfile(`${user.login}`)}
+        sx={{
+          cursor: "pointer",
+        }}
       />
       <UserCardContent>
         <Typography

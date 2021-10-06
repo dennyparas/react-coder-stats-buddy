@@ -60,6 +60,7 @@ export const getHomeUsersAsync = createAsyncThunk(
   async ({
     query,
     location,
+    language,
     page,
     sort,
     order,
@@ -67,6 +68,7 @@ export const getHomeUsersAsync = createAsyncThunk(
   }: {
     query: string;
     location: string;
+    language: string;
     page: number;
     sort: string;
     order: string;
@@ -75,6 +77,7 @@ export const getHomeUsersAsync = createAsyncThunk(
     const response = await fetchUsers(
       query,
       location,
+      language,
       page,
       sort,
       order,

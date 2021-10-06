@@ -3,61 +3,49 @@ import React from "react";
 
 const UserInfoSkeletorLoader: React.FC = () => {
   return (
-    <Container maxWidth="md" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
+    <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Skeleton
             variant="rectangular"
-            width="90%"
-            height={263}
-            sx={{ margin: "auto" }}
+            sx={{
+              margin: "auto",
+              maxWidth: "30%",
+              width: "100%",
+              height: { xs: "100px", sm: "263px" },
+            }}
           />
         </Grid>
-        <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
-          <Skeleton width="35%" />
-          <Skeleton width="25%" />
-          <Skeleton width="85%" />
-          <Box
-            sx={{
-              display: { xs: "block", sm: "flex" },
-              justifyContent: "flex-start",
-            }}
-          >
-            <Skeleton width="25%" sx={{ mr: "10px", mt: "10px" }} />
-            <Skeleton width="25%" sx={{ mr: "10px", mt: "10px" }} />
-            <Skeleton width="25%" sx={{ mr: "10px", mt: "10px" }} />
-            <Skeleton width="25%" sx={{ mr: "10px", mt: "10px" }} />
-          </Box>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Skeleton width="35%" sx={{ margin: "auto" }} />
+          <Skeleton width="85%" sx={{ margin: "auto" }} />
+          <Skeleton width="55%" sx={{ margin: "auto" }} />
           <Box
             sx={{
               mt: "10px",
               display: "flex",
-              justifyContent: { xs: "center", sm: "flex-start" },
+              justifyContent: "center",
               flexWrap: "wrap",
             }}
           >
             <Skeleton
               variant="rectangular"
-              sx={{ mr: "10px", mt: "10px" }}
-              width="22%"
+              sx={{ mr: "10px", mt: "10px", width: { xs: "45%", md: "23.5%" } }}
               height={123}
             />
             <Skeleton
               variant="rectangular"
-              sx={{ mr: "10px", mt: "10px" }}
-              width="22%"
+              sx={{ mr: "10px", mt: "10px", width: { xs: "45%", md: "23.5%" } }}
               height={123}
             />
             <Skeleton
               variant="rectangular"
-              sx={{ mr: "10px", mt: "10px" }}
-              width="22%"
+              sx={{ mr: "10px", mt: "10px", width: { xs: "45%", md: "23.5%" } }}
               height={123}
             />
             <Skeleton
               variant="rectangular"
-              sx={{ mr: "10px", mt: "10px" }}
-              width="22%"
+              sx={{ mr: "10px", mt: "10px", width: { xs: "45%", md: "23.5%" } }}
               height={123}
             />
           </Box>

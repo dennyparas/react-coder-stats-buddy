@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import ReposPage from "./features/repos/ReposPage";
 import UsersPage from "./features/users/UsersPage";
 import UserDetailsPage from "./features/user/UserDetailsPage";
+import PageNotFound from "./features/PageNotFound";
 
 const theme = createTheme({
   typography: {
@@ -39,8 +40,11 @@ const App: React.FC = () => {
           <Route path="/users">
             <UsersPage />
           </Route>
-          <Route path="/user/:userId">
+          <Route path="/user/:userId?">
             <UserDetailsPage />
+          </Route>
+          <Route>
+            <PageNotFound />
           </Route>
         </Switch>
       </Router>

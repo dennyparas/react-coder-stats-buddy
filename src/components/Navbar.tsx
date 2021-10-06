@@ -26,8 +26,14 @@ const Navbar: React.FC = () => {
           <Toolbar>
             <Typography
               variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, fontFamily: "Poppins" }}
+              component={NavLink}
+              color="#fff"
+              sx={{
+                flexGrow: 1,
+                fontFamily: "Poppins",
+                textDecoration: "none",
+              }}
+              to="/"
             >
               Coder Stats Buddy
             </Typography>

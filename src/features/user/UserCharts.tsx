@@ -76,192 +76,193 @@ const UserCharts: React.FC<ChartsProps> = ({ repos, user, status }) => {
 
   return (
     <>
-      {repos.length > 0 && (
-        <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
-          <Box
-            sx={{
-              mt: "10px",
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            {user.public_repos > 0 && (
-              <StatsCard
-                title="Public Repos (Pushed & Fork)"
-                stats={user.public_repos}
-              />
-            )}
-            {user.followers > 0 && (
-              <StatsCard title="Followers" stats={user.followers} />
-            )}
-            {user.following > 0 && (
-              <StatsCard title="Following" stats={user.following} />
-            )}
-            {user.public_gists > 0 && (
-              <StatsCard title="Gist" stats={user.public_gists} />
-            )}
-          </Box>
+      <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "15px" }}>
+        <Box
+          sx={{
+            mt: "10px",
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {user.public_repos > 0 && (
+            <StatsCard
+              title="Public Repos (Pushed & Fork)"
+              stats={user.public_repos}
+            />
+          )}
+          {user.followers > 0 && (
+            <StatsCard title="Followers" stats={user.followers} />
+          )}
+          {user.following > 0 && (
+            <StatsCard title="Following" stats={user.following} />
+          )}
+          {user.public_gists > 0 && (
+            <StatsCard title="Gist" stats={user.public_gists} />
+          )}
+        </Box>
+        {repos.length > 0 && (
+          <>
+            <Typography
+              align="center"
+              sx={{
+                mt: "20px",
+                fontFamily: "Poppins",
+                fontWeight: "fontWeightMedium",
+              }}
+              color="text.secondary"
+              gutterBottom
+            >
+              The stats of {user.name} below are based on the latest{" "}
+              {repos.length} pushed repos
+            </Typography>
+            <Box
+              sx={{
+                mt: "10px",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <Card
+                sx={{
+                  width: { xs: "100%", md: "36%" },
+                  mr: "10px",
+                  mt: "10px",
+                  pl: "50px",
+                  pr: "50px",
+                }}
+                variant="outlined"
+              >
+                <CardContent>
+                  <Typography
+                    align="center"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: "fontWeightMedium",
+                    }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Main Languages
+                  </Typography>
+                  {mostUsedLanguages.length > 0 ? (
+                    <PieChart data={mostUsedLanguages} />
+                  ) : (
+                    "No Data to show"
+                  )}
+                </CardContent>
+              </Card>
+              <Card
+                sx={{
+                  width: { xs: "100%", md: "60%" },
+                  mr: "10px",
+                  mt: "10px",
+                }}
+                variant="outlined"
+              >
+                <CardContent>
+                  <Typography
+                    align="center"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: "fontWeightMedium",
+                    }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Most Forked Repos
+                  </Typography>
+                  {getTopForkedRepos.length > 0 ? (
+                    <BarVerticalChart data={getTopForkedRepos} />
+                  ) : (
+                    "No Data to show"
+                  )}
+                </CardContent>
+              </Card>
+              <Card
+                sx={{
+                  width: { xs: "100%", md: "36%" },
+                  mr: "10px",
+                  mt: "10px",
+                }}
+                variant="outlined"
+              >
+                <CardContent>
+                  <Typography
+                    align="center"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: "fontWeightMedium",
+                    }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Stars Per Language
+                  </Typography>
+                  {mostStarsPerLanguage.length > 0 ? (
+                    <DoughnutChart data={mostStarsPerLanguage} />
+                  ) : (
+                    "No Data to show"
+                  )}
+                </CardContent>
+              </Card>
+              <Card
+                sx={{
+                  width: { xs: "100%", md: "60%" },
+                  mr: "10px",
+                  mt: "10px",
+                }}
+                variant="outlined"
+              >
+                <CardContent>
+                  <Typography
+                    align="center"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: "fontWeightMedium",
+                    }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    Most Starred Repos
+                  </Typography>
+                  {getTopStarredRepos.length > 0 ? (
+                    <BarHorizontalChart data={getTopStarredRepos} />
+                  ) : (
+                    "No Data to show"
+                  )}
+                </CardContent>
+              </Card>
+            </Box>
 
-          <Typography
-            align="center"
-            sx={{
-              mt: "20px",
-              fontFamily: "Poppins",
-              fontWeight: "fontWeightMedium",
-            }}
-            color="text.secondary"
-            gutterBottom
-          >
-            The stats of {user.name} below are based on the latest{" "}
-            {repos.length} pushed repos
-          </Typography>
-          <Box
-            sx={{
-              mt: "10px",
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <Card
+            <Box
               sx={{
-                width: { xs: "100%", md: "36%" },
-                mr: "10px",
                 mt: "10px",
-                pl: "50px",
-                pr: "50px",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
               }}
-              variant="outlined"
             >
-              <CardContent>
-                <Typography
-                  align="center"
-                  sx={{
-                    fontFamily: "Poppins",
-                    fontWeight: "fontWeightMedium",
-                  }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  Main Languages
-                </Typography>
-                {mostUsedLanguages.length > 0 ? (
-                  <PieChart data={mostUsedLanguages} />
-                ) : (
-                  "No Data to show"
-                )}
-              </CardContent>
-            </Card>
-            <Card
-              sx={{
-                width: { xs: "100%", md: "60%" },
-                mr: "10px",
-                mt: "10px",
-              }}
-              variant="outlined"
-            >
-              <CardContent>
-                <Typography
-                  align="center"
-                  sx={{
-                    fontFamily: "Poppins",
-                    fontWeight: "fontWeightMedium",
-                  }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  Most Forked Repos
-                </Typography>
-                {getTopForkedRepos.length > 0 ? (
-                  <BarVerticalChart data={getTopForkedRepos} />
-                ) : (
-                  "No Data to show"
-                )}
-              </CardContent>
-            </Card>
-            <Card
-              sx={{
-                width: { xs: "100%", md: "36%" },
-                mr: "10px",
-                mt: "10px",
-              }}
-              variant="outlined"
-            >
-              <CardContent>
-                <Typography
-                  align="center"
-                  sx={{
-                    fontFamily: "Poppins",
-                    fontWeight: "fontWeightMedium",
-                  }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  Stars Per Language
-                </Typography>
-                {mostStarsPerLanguage.length > 0 ? (
-                  <DoughnutChart data={mostStarsPerLanguage} />
-                ) : (
-                  "No Data to show"
-                )}
-              </CardContent>
-            </Card>
-            <Card
-              sx={{
-                width: { xs: "100%", md: "60%" },
-                mr: "10px",
-                mt: "10px",
-              }}
-              variant="outlined"
-            >
-              <CardContent>
-                <Typography
-                  align="center"
-                  sx={{
-                    fontFamily: "Poppins",
-                    fontWeight: "fontWeightMedium",
-                  }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  Most Starred Repos
-                </Typography>
-                {getTopStarredRepos.length > 0 ? (
-                  <BarHorizontalChart data={getTopStarredRepos} />
-                ) : (
-                  "No Data to show"
-                )}
-              </CardContent>
-            </Card>
-          </Box>
-
-          <Box
-            sx={{
-              mt: "10px",
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            {getTotalStarredRepos > 0 && (
-              <StatsCard title="Total Stars" stats={getTotalStarredRepos} />
-            )}
-            {getTotalForkedRepos > 0 && (
-              <StatsCard title="Total Forks" stats={getTotalForkedRepos} />
-            )}
-            {mostUsedLanguages.length > 0 && (
-              <StatsCard
-                title="Main Language"
-                stats={mostUsedLanguages.length}
-              />
-            )}
-            {repos.length > 0 && (
-              <StatsCard title="Pushed Repos" stats={repos.length} />
-            )}
-          </Box>
-        </Container>
-      )}
+              {getTotalStarredRepos > 0 && (
+                <StatsCard title="Total Stars" stats={getTotalStarredRepos} />
+              )}
+              {getTotalForkedRepos > 0 && (
+                <StatsCard title="Total Forks" stats={getTotalForkedRepos} />
+              )}
+              {mostUsedLanguages.length > 0 && (
+                <StatsCard
+                  title="Main Language"
+                  stats={mostUsedLanguages.length}
+                />
+              )}
+              {repos.length > 0 && (
+                <StatsCard title="Pushed Repos" stats={repos.length} />
+              )}
+            </Box>
+          </>
+        )}
+      </Container>
     </>
   );
 };

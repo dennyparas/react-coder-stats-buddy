@@ -8,6 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
+import SearchIcon from "@mui/icons-material/Search";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { makeStyles } from "@mui/styles";
 import React, { useState, ChangeEvent, FormEvent } from "react";
@@ -94,7 +95,7 @@ const HomeSearchForm: React.FC = () => {
                 type="submit"
                 variant="contained"
               >
-                Search
+                <SearchIcon />
               </Button>
             </Grid>
           </Grid>
