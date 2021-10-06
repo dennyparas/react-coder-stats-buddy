@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 import RepoList from "../../components/RepoList";
 import { useAppSelector, useAppDispatch } from "../../hooks/reduxHooks";
 import { homeRepos, getHomeReposAsync } from "./../home/HomeSlice";
+import { NavLink } from "react-router-dom";
 
 const HomeReposSection: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -28,10 +29,12 @@ const HomeReposSection: React.FC = () => {
     <Container maxWidth="xl" sx={{ flexGrow: 1, mt: "25px", mb: "25px" }}>
       <Box sx={{ mt: "15px", mb: "15px" }}>
         <Typography
+          color="text.primary"
           gutterBottom
           variant="h6"
-          component="div"
-          sx={{ fontFamily: "Poppins" }}
+          component={NavLink}
+          sx={{ fontFamily: "Poppins", textDecoration: "none" }}
+          to={`/repos?language=Any&sort=stars&order=desc`}
         >
           Most starred repos
         </Typography>

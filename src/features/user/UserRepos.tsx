@@ -23,7 +23,7 @@ const UserRepos: React.FC<ReposProps> = ({ repos, status }) => {
             >
               {repos.length > 0
                 ? `Pushed Repos (${repos.length})`
-                : "User has no repository"}
+                : "User has no pushed repository"}
             </Typography>
           )}
         </Box>

@@ -7,6 +7,7 @@ import ErrorDialog from "../../components/ErrorDialog";
 
 type ParamsProps = {
   searchParams: string;
+  languageParams: string;
   locationParams: string;
   sortParams: string;
   orderParams: string;
@@ -14,6 +15,7 @@ type ParamsProps = {
 
 const UsersSearchResults: React.FC<ParamsProps> = ({
   searchParams,
+  languageParams,
   locationParams,
   sortParams,
   orderParams,
@@ -35,6 +37,7 @@ const UsersSearchResults: React.FC<ParamsProps> = ({
     dispatch(
       getUsersAsync({
         query: searchParams,
+        language: languageParams,
         location: locationParams,
         page: usersCurrentPage + 1,
         sort: sortParams,

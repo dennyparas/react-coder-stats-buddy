@@ -26,6 +26,7 @@ const initialState: UserDetails = {
     created_at: "",
   },
   userDetailsStatus: "idle",
+  userDetailsNotFound: false,
   userDetailsError: false,
   userRepos: [],
   userReposStatus: "idle",
@@ -73,6 +74,10 @@ export const userDetailsSlice = createSlice({
         state.userDetails = action.payload;
       })
       .addCase(getUserDetailsAsync.rejected, (state, action) => {
+        state.userDetailsNotFound =
+          action.error.message === "Request failed with status code 404"
+            ? true
+            : false;
         state.userDetailsStatus = "failed";
         state.userDetailsError = true;
       })
